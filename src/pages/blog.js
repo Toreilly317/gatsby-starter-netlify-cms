@@ -4,32 +4,17 @@ import { graphql } from 'gatsby'
 import Layout from '../components/Layout'
 import styled from 'styled-components';
 import { Heading1 } from "../components/styled"
-import NavLink from "../components/common/NavLink"
+import NavLink from "../components/common/NavLink";
+import { Card, CardTitle, CardExerpt } from "../components/styled"
 
 
 const BlogArea = styled.div`
 display: grid;
-grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+grid-template-columns: repeat(auto-fill, minmax(min-content, 1fr));
+align-content: flex-start;
+grid-template-rows: 15rem;
 grid-gap: 5px;
 
-`
-
-const Card = styled.div`
-  background: white;
-  border-radius: 3px;
-  padding: 2.8rem;
-`
-
-const CardTitle = styled.div`
-color: black;
-font-size: 2rem;
-a {
-  color: currentColor;
-}
-`
-
-const CardExerpt = styled.div`
-  padding: 1rem;
 `
 
 export default class BlogPage extends React.Component {

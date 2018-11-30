@@ -11,11 +11,13 @@ const Menu = () => (
     <NavLink to="/blog" text="Blog" />
     {/* <NavLink to="/projects" text="Projects" /> */}
     <NavLink to="/contact" text="Contact" />
-    <NavLink to="https://github.com/toreilly317">
+    <div>
       <Icon>
-        <img src={github} alt="Github" />
+        <a href="https://github.com/toreilly317">
+          <img src={github} alt="Github" />
+        </a>
       </Icon>
-    </NavLink>
+    </div>
   </Nav>
 )
 
