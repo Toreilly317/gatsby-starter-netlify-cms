@@ -15,7 +15,7 @@ export const Form = styled.form`
 export const Input = styled.input`
   border-radius: 3px;
   box-shadow: 0px 0px 1px rgba(0,0,0,.5) inset;
-  padding: 1rem 2rem;
+  padding: 2rem 1rem;
   font-size: 1.5rem;
   border: 1px solid black;
   display: inline-block;
