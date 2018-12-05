@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export { Form, Input, SubmitButton } from "./form"
+export { Form, Input, SubmitButton, TextArea } from "./form"
 export { Container, Header, Footer, Section, Content } from "./layout"
 export { Nav } from "./nav"
 export { Heading1 } from "./typography"
