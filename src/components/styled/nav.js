@@ -1,16 +1,17 @@
 import styled from 'styled-components'
 
 export const Nav = styled.nav`
-background: #2F4858;
 font-size: 2rem;
+text-align: center;
 display: flex;
-flex-direction: row;
-justify-items: space-between;
+align-content: center;
 justify-content: space-between;
-align-self: center;
-padding: 2rem;
+align-items: center;
 a{
-  color: #F6AE2D;
+  font-size: 1.6rem;
+  color: white;
+  text-transform: uppercase;
+  margin: 0;
   text-decoration: none;
   
   
@@ -19,6 +20,7 @@ a{
     text-decoration: underline;
     color: white;
   }
+
   &:visited{
     
   }

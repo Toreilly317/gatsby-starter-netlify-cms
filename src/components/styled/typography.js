@@ -7,3 +7,11 @@ font-weight: 400;
 padding: 0;
 margin: 0;
 `
+
+export const Heading2 = styled.h2`
+font-size: 2rem;
+color: white;
+font-weight: 400;
+padding: 0;
+margin: 0;
+`

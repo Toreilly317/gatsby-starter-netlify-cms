@@ -5,7 +5,27 @@ import Helmet from 'react-helmet'
 import { graphql, Link } from 'gatsby'
 import Layout from '../components/Layout'
 import Content, { HTMLContent } from '../components/Content'
-import { Heading1 } from "../components/styled"
+import { Section, Grid, GridItem } from "../components/styled"
+import styled from "styled-components"
+
+const Post = styled.div`
+  & img {
+    max-width: 100vw;
+    max-height: 400px;
+    margin: 0 auto;
+    display: block;
+    margin-bottom: 2rem;
+  }
+`
+
+const Title = styled.h1`
+  font-size: 3rem;
+`
+
+const SubTitle = styled.div`
+  font-size: 1.8rem;
+  
+`
 
 export const BlogPostTemplate = ({
   content,
@@ -16,28 +36,40 @@ export const BlogPostTemplate = ({
   helmet,
 }) => {
   const PostContent = contentComponent || Content
-
+  console.log(content)
   return (
-    <section className="section">
+    <Grid>
       {helmet || ''}
-      <Heading1>
-        {title}
-      </Heading1>
-      <p>{description}</p>
-      <PostContent content={content} />
-      {tags && tags.length ? (
-        <div style={{ marginTop: `4rem` }}>
-          <h4>Tags</h4>
-          <ul className="taglist">
-            {tags.map(tag => (
-              <li key={tag + `tag`}>
-                <Link to={`/tags/${kebabCase(tag)}/`}>{tag}</Link>
-              </li>
-            ))}
-          </ul>
-        </div>
-      ) : null}
-    </section >
+      <GridItem column="1" row={"1/-1"}>
+        <Title>
+          {title}
+        </Title>
+        <SubTitle>{description}</SubTitle>
+      </GridItem>
+      <GridItem>
+        
+      </GridItem>
+      <Post>
+
+
+
+        <Section style={{ background: "rebeccapurple", fontSize: "2rem", padding: "2rem" }}>
+          <PostContent content={content} />
+          {tags && tags.length ? (
+            <div style={{ marginTop: `4rem` }}>
+              <h4>Tags</h4>
+              <ul className="taglist">
+                {tags.map(tag => (
+                  <li key={tag + `tag`}>
+                    <Link to={`/tags/${kebabCase(tag)}/`}>{tag}</Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ) : null}
+        </Section >
+      </Post>
+    </Grid>
   )
 }
 
