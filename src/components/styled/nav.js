@@ -4,9 +4,8 @@ export const Nav = styled.nav`
 font-size: 2rem;
 text-align: center;
 display: flex;
-align-content: center;
-justify-content: space-between;
-align-items: center;
+
+
 a{
   font-size: 1.6rem;
   color: white;

@@ -1,21 +1,57 @@
 import React from 'react'
-import PropTypes from 'prop-types'
-import { graphql } from 'gatsby'
+import { Link, graphql } from 'gatsby'
+import Img from "gatsby-image"
 import Layout from '../components/Layout'
-import styled from 'styled-components';
-import { Heading1 } from "../components/styled"
-import NavLink from "../components/common/NavLink";
-import { Card, CardTitle, CardExerpt } from "../components/styled"
+import styled from "styled-components";
 
+const BlogList = styled.div`
+   padding: 1rem;
+`;
 
-const BlogArea = styled.div`
-display: grid;
-grid-template-columns: repeat(auto-fill, minmax(min-content, 1fr));
-align-content: flex-start;
-grid-template-rows: 15rem;
-grid-gap: 5px;
+const BlogPost = styled.div`
+ 
+  
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  border-radius: 2px;
+  margin-bottom: 1rem;
+  border-bottom: 2px solid blue;
+  padding: 1rem .5rem;
 
+  &:not(:last-child){
+    margin-bottom: 1rem;
+  }
+  
+  .post-image {
+    max-width: 300px;
+    max-height: 300px;
+    flex: 1;
+    
+
+    img {
+      width: 100%;
+      height: 100%;
+
+    }
+  }
+  
+  .post-title{
+    padding: 1rem;
+    
+    flex: 1;
+
+    a {
+      font-size: 3rem;
+      text-decoration: none;
+      color: black;
+      cursor: pointer;
+    }
+  }
+  
+    
 `
+
 
 export default class BlogPage extends React.Component {
   render() {
@@ -23,53 +59,62 @@ export default class BlogPage extends React.Component {
     const { edges: posts } = data.allMarkdownRemark
 
     return (
-      <Layout>
-        <Heading1>Latest Blog Posts</Heading1>
-        <BlogArea>
+      <Layout title="Taylor O'Reilly">
+        <BlogList>
           {posts
             .map(({ node: post }) => (
-              <Card key={post.id}>
-                <CardTitle><NavLink to={post.fields.slug} text={post.frontmatter.title} /></CardTitle>
-                <CardExerpt>{post.excerpt}</CardExerpt>
-                <NavLink to={post.fields.slug} text="Keep Reading →" />
-                <small>{post.frontmatter.date}</small>
-              </Card>
-            ))}
-        </BlogArea>
+              <BlogPost key={post.id}>
 
+                <div class="post-image">
+                  <Link className="has-text-primary" to={post.fields.slug}>
+                    <Img fixed={post.frontmatter.featured.childImageSharp.fixed} />
+                  </Link>
+                </div>
+                <div class="post-title">
+                  <div className="post-title">
+                    <Link className="has-text-primary" to={post.fields.slug}>
+                      {post.frontmatter.title}
+                    </Link>
+                  </div>
+                </div>
+
+              </BlogPost>
+
+            ))}
+        </BlogList>
       </Layout>
     )
   }
 }
 
-BlogPage.propTypes = {
-  data: PropTypes.shape({
-    allMarkdownRemark: PropTypes.shape({
-      edges: PropTypes.array,
-    }),
-  }),
-}
+
 
 export const pageQuery = graphql`
-  query BlogQuery {
-    allMarkdownRemark(
-      sort: { order: DESC, fields: [frontmatter___date] },
-      filter: { frontmatter: { templateKey: { eq: "blog-post" } }}
-    ) {
-      edges {
-        node {
-          excerpt(pruneLength: 400)
-          id
-          fields {
-            slug
+ query IndexQuery {
+  allMarkdownRemark(sort: {order: DESC, fields: [frontmatter___date]}, filter: {frontmatter: {templateKey: {eq: "blog-post"}}}) {
+    edges {
+      node {
+        id
+        fields {
+          slug
+        }
+        frontmatter {
+          title
+          featured {
+            childImageSharp {
+              fixed(width: 300) {
+                ...GatsbyImageSharpFixed
+              } 
+            }
           }
-          frontmatter {
-            title
-            templateKey
-            date(formatString: "MMMM DD, YYYY")
-          }
+          date(formatString: "MMMM DD, YYYY")
         }
       }
     }
   }
+}
 `
+
+
+
+

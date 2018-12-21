@@ -1,6 +1,30 @@
-import React from 'react'
-import { Form, Input, TextArea, SubmitButton } from '../components/styled'
-import { navigateTo } from "gatsby-link";
+import React from "react";
+import { navigateTo } from "gatsby-link"
+import Button from "./styled/Button"
+import styled from "styled-components";
+
+export const Form = styled.form`
+  display: grid;
+  grid-row-gap: .5rem;
+  padding: 5rem;
+  width: 100%;
+  margin: auto;
+
+  & input, textarea{
+  padding: 2rem 1rem;
+  border-radius: 2px;
+  margin-bottom: 1rem;
+  display: block;
+  outline: none;
+  color: black;
+  border: 1px solid black;
+}`;
+
+
+
+
+
+
 
 function encode(data) {
   return Object.keys(data)
@@ -35,10 +59,10 @@ export default class Contact extends React.Component {
 
   render() {
     return (
+
       <Form
         name="contact"
         method="post"
-        action="/thanks/"
         data-netlify="true"
         data-netlify-honeypot="bot-field"
         onSubmit={this.handleSubmit}
@@ -46,13 +70,34 @@ export default class Contact extends React.Component {
         {/* The `form-name` hidden field is required to support form submissions without JavaScript */}
         <input type="hidden" name="form-name" value="contact" />
         <input name="bot-field" type="hidden" onChange={this.handleChange} />
-        <Input placeholder="Name" type="text" name="name" onChange={this.handleChange} />
-        <Input placeholder="Email" type="email" name="email" onChange={this.handleChange} />
-        <Input placeholder="Phone" type="text" name="phone" onChange={this.handleChange} />
-        <TextArea placeholder="Message" name="message" onChange={this.handleChange} />
-        <SubmitButton type="submit">Send</SubmitButton>
+        <input
+          placeholder="Name"
+          type="text"
+          name="name"
+          onChange={this.handleChange}
+        />
+        <input
+          placeholder="Email"
+          type="email"
+          name="email"
+          onChange={this.handleChange}
+        />
+        <input
+          placeholder="Phone"
+          type="text"
+          name="phone"
+          onChange={this.handleChange}
+        />
+        <textarea
+          placeholder="Message"
+          name="message"
+          onChange={this.handleChange}
+        />
+        <Button type="submit">
+          Send
+        </Button>
+        <div style={{ fontSize: "1rem" }}>Also available @ <a href="mailto:toreilly317@gmail.com">TOReilly317@gmail.com</a></div>
       </Form>
-
     );
   }
 }

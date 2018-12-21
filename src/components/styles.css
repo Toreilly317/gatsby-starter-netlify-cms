@@ -1,11 +1,12 @@
-@import url("https://fonts.googleapis.com/css?family=Open+Sans|Oswald");
+@import url("https://fonts.googleapis.com/css?family=Lato:300,400,900");
+
 :root {
-  --color-gray: #ede8e8;
-  --color-white: #fefffe;
-  --color-black: #0f0f0f;
+  --color-blue: #1f7a8c;
+  --color-white: #fafafa;
+  --color-yellow: #fec601;
   --line: 1px solid var(--color-grey);
-  --font-heading: "Oswald", sans-serif;
-  --font-primary: "Open Sans", sans-serif;
+  --text-primary: "Lato", sans-serif;
+  --text-heading: "Lato", sans-serif;
 }
 
 h1,
@@ -14,7 +15,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: var(--font-heading);
+  font-family: var(--text-heading);
   font-size: 3rem;
 }
 
@@ -47,8 +48,10 @@ html {
 }
 
 body {
-  font-family: var(--font-primary);
+  font-family: var(--text-primary);
+  background: #4ea9da;
   font-weight: 400;
   line-height: 1.6;
+  color: var(--color-white);
   min-height: 100vh;
 }
