@@ -43,14 +43,15 @@ export default (props) => (
       <h2>FullStack Js Dev | Tech Enthusiast | Musician</h2>
       <div>Hey There, I'm Taylor O'Reilly</div>
       <div>
-        I'm a fullstack JavaScript developer out of Boston MA and I love building things.
+        I'm a fullstack developer out of Boston MA and I love building things with JavaScript.
     </div>
       <div>
         These days Javascript is everywhere. Servers, IoT
-        devices, drones, you name it! Are you in need a new website, web app, or just have a crazy idea you want to see brought to life?
+        devices, drones, you name it! 
     </div>
       <div>
-        I'm always looking for new clients or an amazing agency to work with so let's talk soon!
+      So if you in need a new website, web app, or just have a crazy idea you want to see brought to life,
+        I'm always looking for new clients or an amazing agency to work with. Let's talk soon!
     </div>
       <ButtonContainer>
         <Link to="/contact">
