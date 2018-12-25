@@ -4,6 +4,7 @@ module.exports = {
     description: 'Taylor O\'Reilly is a fullstack web developer from Boston Ma.',
   },
   plugins: [
+    `gatsby-plugin-styled-components`,
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-sass',
     {
