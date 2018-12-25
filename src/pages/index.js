@@ -55,7 +55,7 @@ export default (props) => (
         devices, drones, you name it!
     </div>
       <div>
-        So if you in need a new website, web app, or just have a crazy idea you want to see brought to life,
+        So if you're in need of a new website, web app, or just have a crazy idea you want to see brought to life,
           I'm always looking for new clients or an amazing agency to work with. Let's talk soon!
     </div>
       <ButtonContainer>
