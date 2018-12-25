@@ -2,111 +2,42 @@ import Helmet from 'react-helmet'
 import React from "react";
 import { StaticQuery, graphql } from "gatsby"
 import styled from 'styled-components';
-import Header from "./Header";
+import Menu from "./Menu"
 import "./base.css"
 
+
 const Container = styled.div`
+   min-height: 100vh;
   display: flex;
-  min-height: 100vh;
-  @media screen and (max-width: 768px) {
-    display: flex;
+  flex-wrap: wrap;
+  background: black; 
+  @media screen and (max-width: 375px){
     flex-direction: column;
-    color: var(--color-black);
-  }
-`;
+  }`;
 
-const Intro = styled.div`
-  flex: 1.4;
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  background-image: url("https://d279m997dpfwgl.cloudfront.net/wp/2018/01/lance-anderson-393963-1000x667.jpg");
-  background-size: cover;
-  background-position: center;
-  @media screen and (max-width: 375px) {
-    flex: 1;
-  }
-`;
 
-const ContentArea = styled.div`
-  flex: 3;
-  display: flex;
-  flex-direction: column;
-  overflow: auto;
+const Sidebar = styled.div`
+   background: var(--color-gray);
+  flex: 1;
+  padding: 2rem;
   max-height: 100vh;
-  grid-column: 2/3;
-  color: var(--color-black);
-`;
-
-const Title = styled.div`
-  height: 100%;
-  font-family: var(--font-heading);
-  grid-row: 2/3;
   display: flex;
-  font-family: "lato";
-  align-items: center;
-  color: var(--color-white);
-  text-align: center;
-  text-transform: uppercase;
-  letter-spacing: 1.2rem;
-  text-shadow: 0px 2px rgba(0, 0, 0, 0.9);
-  font-size: 5rem;
-  font-weight: 900;
-
-  @media screen and (max-width: 375px) {
-    font-size: 3rem;
-    justify-content: center;
+  flex-direction: column;
+  
+  @media screen and (max-width: 375px){
+    flex-direction: row;
     width: 100%;
+    align-self: flex-start;
+    justify-content: space-around;
+    flex: 0;
+    padding: 1rem;
   }
 `;
 
-const IntroButton = styled.div`
-  display: flex;
-  width: 100%;
-  align-items: center;
-  justify-items: center;
-  align-self: flex-end;
-  div {
-    background: var(--color-gray);
-    align-self: flex-end;
-    color: black;
-    padding: 0.5rem;
-    font-size: 1.2rem;
-    text-transform: uppercase;
-
-    @media screen and (min-width: 800px) {
-      padding: 1rem;
-      align-items: center;
-      justify-items: center;
-      align-self: flex-end;
-    }
-  }
-`;
-
-
-
-const DateBlock = styled.div`
-  display: flex;
-  font-size: 4rem;
-`;
-const DateArea = ({ date }) => {
-
-  if (date) {
-    return (
-      <IntroButton>
-        <DateBlock>
-          <div>{date}</div>
-        </DateBlock >
-      </IntroButton>
-
-    )
-  } else {
-    return <div></div>
-  }
-
-
-
-};
+const Content = styled.div`
+flex: 7;
+padding: 2rem;
+`
 
 
 const TemplateWrapper = ({ children, title, date }) => (
@@ -141,15 +72,12 @@ const TemplateWrapper = ({ children, title, date }) => (
           <meta property="og:image" content="/img/og-image.jpg" />
         </Helmet>
         <Container>
-          <Intro>
-            <Title>{title}</Title>
-            <DateArea date={date} />
-          </Intro>
-
-          <ContentArea>
-            <Header />
+          <Sidebar>
+            <Menu />
+          </Sidebar>
+          <Content>
             {children}
-          </ContentArea>
+          </Content>
         </Container>
       </>
     )}

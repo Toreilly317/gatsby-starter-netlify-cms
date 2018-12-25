@@ -7,7 +7,6 @@ const Contact = () => {
   return (
     <Layout title="Get In Touch">
       <ContactForm />
-
     </Layout>
   )
 }

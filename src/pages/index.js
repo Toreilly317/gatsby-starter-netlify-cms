@@ -1,11 +1,16 @@
 import React from 'react'
 import styled from "styled-components";
-import Layout from "../components/LayoutWithSidebar";
+import Layout from "../components/Layout";
 import BostonImage from "../../static/img/boston.jpg"
 import { Link } from "gatsby"
 import Button from "../components/styled/Button"
 
 const PostContainer = styled.div`
+color: white;
+display: flex;
+flex-direction: column;
+justify-items: center;
+justify-content: center;
   div {
     font-size: 2rem;
     font-weight: 400;
@@ -47,11 +52,11 @@ export default (props) => (
     </div>
       <div>
         These days Javascript is everywhere. Servers, IoT
-        devices, drones, you name it! 
+        devices, drones, you name it!
     </div>
       <div>
-      So if you in need a new website, web app, or just have a crazy idea you want to see brought to life,
-        I'm always looking for new clients or an amazing agency to work with. Let's talk soon!
+        So if you in need a new website, web app, or just have a crazy idea you want to see brought to life,
+          I'm always looking for new clients or an amazing agency to work with. Let's talk soon!
     </div>
       <ButtonContainer>
         <Link to="/contact">

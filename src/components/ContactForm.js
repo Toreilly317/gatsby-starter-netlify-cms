@@ -96,7 +96,7 @@ export default class Contact extends React.Component {
         <Button type="submit">
           Send
         </Button>
-        <div style={{ fontSize: "1rem" }}>Also available @ <a href="mailto:toreilly317@gmail.com">TOReilly317@gmail.com</a></div>
+        <div style={{ fontSize: "1rem", color: "white", fontSize: "1.6rem" }}>Also available at <a style={{ color: "white" }} href="mailto:toreilly317@gmail.com">TOReilly317@gmail.com</a></div>
       </Form>
     );
   }
