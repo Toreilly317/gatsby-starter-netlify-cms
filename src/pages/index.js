@@ -51,8 +51,8 @@ export default (props) => (
         I'm a fullstack developer out of Boston and I love building things with JavaScript.
     </div>
       <div>
-        These days Javascript is everywhere. Servers, IoT
-        devices, drones, you name it!
+        These days, Javascript is everywhere. Servers, IoT
+        devices, drones...you name it!
     </div>
       <div>
         So if you're in need of a new website, web app, or just have a crazy idea you want to see brought to life,
