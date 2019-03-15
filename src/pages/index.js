@@ -46,9 +46,9 @@ export default (props) => (
     <PostContainer>
       <h1>I'm Taylor O'Reilly!</h1>
       <h2>FullStack Js Dev | Tech Enthusiast | Musician</h2>
-      <div>Hey There, I'm Taylor O'Reilly</div>
+      <div>Hey there, I'm Taylor O'Reilly.</div>
       <div>
-        I'm a fullstack developer out of Boston MA and I love building things with JavaScript.
+        I'm a fullstack developer out of Boston and I love building things with JavaScript.
     </div>
       <div>
         These days Javascript is everywhere. Servers, IoT
