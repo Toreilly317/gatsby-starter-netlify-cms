@@ -70,6 +70,7 @@ const TemplateWrapper = ({ children, title, date }) => (
           <meta property="og:title" content={data.site.siteMetadata.title} />
           <meta property="og:url" content="/" />
           <meta property="og:image" content="/img/og-image.jpg" />
+          <meta name="google-site-verification" content="qgyUDs477NR9tHI0f0Ci0qU9FECLNiv66cj_qiEX5kw" />
         </Helmet>
         <Container>
           <Sidebar>
